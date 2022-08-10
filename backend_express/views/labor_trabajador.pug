@@ -1,0 +1,46 @@
+head
+  meta(charset='utf-8')
+  title Registro trabajador
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css') 
+  body
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") 
+              span.sr-only Close  
+            h4(style="font-size:50" )
+             #myModalLabel.modal-title
+             b
+              center| Información de trabajador
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:3000/labor_trabajador')
+            
+            div.form-group  
+                
+                label(for='ciudad') Labor a desempeñar:
+                select#name.form-control(name='ciudad')
+                  option(value='plomero') Plomero/a
+                  option(value='cerrajero') Cerrajero/a
+                  option(value='pintor') Pintor/a
+                  option(value='profesor_de_ingles') Profesor de ingles
+                  option(value='mesero') Mesero/a
+                  option(value='chef') Chef
+                  option(value='niñero') Niñero/a
+                  option(value='paseador_de_mascotas') Paseador/a de mascotas
+                  option(value='empleado_domestico') Empleado/a doméstico/a             
+            div.form-group
+               <input type="text" id="tarifa" name="tarifa" value="Tarifa">
+               <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+               <label for="vehicle1"> Por hora</label>
+               <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+               <label for="vehicle2"> Por unidad</label><br>
+            div.form-group
+            center         
+             a(class='button' href='http://localhost:3000/labor_trabajador' class='btn btn-primary' target='_blank') Completar registro
+          // Modal Footer
+          .modal-footer
+            h6 Derechos Reservados 2022 &#169
