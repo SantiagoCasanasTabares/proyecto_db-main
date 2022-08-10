@@ -10,6 +10,10 @@ const crearRouter = require('./routes/crear');
 
 const queryRouter = require('./routes/query');
 const usuarioRouter = require('./routes/usuario');
+const sesionRouter = require("./routes/sesion");
+const registroRouter = require("./routes/registro");
+const registroTraRouter = require("./routes/registro_trabajador");
+const laborTraRouter = require("./routes/labor_trabajador");
 
 const app = express();
 
@@ -26,6 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/hello', helloRouter);
 app.use('/', indexRouter);
 app.use('/crear', crearRouter);
+app.use("/sesion", sesionRouter);
+app.use("/registro", registroRouter);
+app.use("/registro_trabajador", registroTraRouter);
+app.use("/labor_trabajador", laborTraRouter);
+
 
 app.use('/ejecutar_query', queryRouter);
 app.use('/usuario', usuarioRouter);
