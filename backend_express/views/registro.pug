@@ -1,0 +1,30 @@
+head
+  meta(charset='utf-8')
+  title Registro
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css') 
+  body
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") 
+              span.sr-only Close  
+            h4(style="font-size:50" )
+             #myModalLabel.modal-title
+             b
+              center| Registrarse
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:3000/registro')
+            div.form-group
+            center 
+             a(class='button' href='http://localhost:3000/registro_trabajador' class='btn btn-primary' target='_blank' ) Como trabajador
+            div.form-group
+            center         
+             a(class='button' href='http://localhost:3000/sesion' class='btn btn-primary' target='_blank') Como usuario
+            div.form-group 
+          // Modal Footer
+          .modal-footer
+            h6 Derechos Reservados 2022 &#169
