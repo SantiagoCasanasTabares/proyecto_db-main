@@ -1,0 +1,36 @@
+head
+  meta(charset='utf-8')
+  title Iniciar Sesión
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css') 
+  body
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") 
+              span.sr-only Close  
+            h4(style="font-size:50" )
+             #myModalLabel.modal-title
+             b
+              center| Inicio de Sesión
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:3000/sesion/')
+            div.form-group
+              label(for='correo') Celular o email:
+              input#name.form-control(type='email', name='correo', placeholder='usuario@gmail.com')
+            div.form-group
+              label(for='password') Contraseña:
+              input#password.form-control(type='password', name='password', placeholder='xxxx')
+            div.form-group
+            center 
+              a(class='button' href='http://localhost:3000' class='btn btn-primary' target='_blank' ) Ingresar
+            div.form-group
+            center         
+             a(class='button' href='http://localhost:3000' target='_blank') Recuperar Contraseña
+             p  &gt;...  
+          // Modal Footer
+          .modal-footer
+            h6 Derechos Reservados 2022 &#169
