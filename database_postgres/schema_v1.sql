@@ -96,7 +96,19 @@ CREATE TABLE Servicio(
 CREATE INDEX idx_trab_doc ON Servicio USING HASH (trabajador_documento);
 CREATE INDEX idx_usu_cel ON Servicio USING HASH (usuario_celular);
 
-
+CREATE TABLE Pago(
+    id_servicio INT,
+    id_usuario VARCHAR(15),
+    id_trabajador INT,
+    num_tarjeta_usuario VARCHAR(45),
+    cvc VARCHAR(3),
+    CONSTRAINT fk_pago1 FOREIGN KEY (id_servicio)
+      REFERENCES Servicio(servicio_id),
+    CONSTRAINT fk_pago2 FOREIGN KEY (id_usuario)
+      REFERENCES Cliente(cliente_celular),
+    CONSTRAINT fk_pago3 FOREIGN KEY (id_trabajador)
+      REFERENCES Trabajador(trabajador_id),
+);
 -- ************************LABORES DEFINIDAS**********************************
 
 INSERT INTO Labor (labor_nombre, labor_descripcion) VALUES
@@ -110,4 +122,14 @@ INSERT INTO Labor (labor_nombre, labor_descripcion) VALUES
 ('Paseador/a de mascotas'),
 ('Empleado/a doméstico/a');
 
+-- Procedimientos 
 
+CREATE FUNCTION nuevo_trabajador(documento INT,  foto_doc VARBINARY, nombre VARCHAR, apellido VARCHAR, fotoperfil VARBINARY, pass VARCHAR) RETURNS void AS $$
+BEGIN
+INSERT INTO Persona(persona_id,persona_nombre, persona_apellido, persona_password)
+VALUES (documento, nombre,apellido,pass);
+INSERT INTO Trabajador( trabajador_foto_id,trabajador_foto_perfil)
+VALUES (foto_doc,fotoperfil);
+END;
+$$
+LANGUAGE plpgsql;
