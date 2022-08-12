@@ -1,0 +1,51 @@
+head
+  meta(charset='utf-8')
+  title Medio de Pago
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css') 
+  body
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") 
+              span.sr-only Close  
+            h4(style="font-size:50" )
+             #myModalLabel.modal-title
+             b
+              center| Información de Usuario
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:3000/medio_pago')
+            
+            div.form-group  
+              center
+                label(for='pago') Medio de pago:
+              center
+                img(src="https://cdn.icon-icons.com/icons2/1534/PNG/512/3338967-card-credit_106897.png" width="200" height="200")  
+              center   
+                label(for='tarjeta') Tipo de tarjeta:
+                select(name='tarjeta')
+                  option(value='debito') Debito
+                  option(value='credito') Credito            
+            div.form-group
+              center            
+                label(for='nombre') Nombre:    
+                input(type='text', name='nombre', placeholder='Gustavo')
+            
+                label(for='apellido') ㅤㅤApellido:
+                input(type='text', name='apellido', placeholder='Petro')
+                     
+            div.form-group
+               <label for="vencimiento">Fecha de Vencimiento:</label>
+                label(for='cvc') ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤCVC:
+                input(type='number', name='cvc', min="000" max="999")
+            div.form-group   
+               <input type="date" id="nacimiento" name="nacimiento">
+            div.form-group
+            center         
+             a(class='button' href='http://localhost:3000' class='btn btn-primary' target='_blank') Completar registro
+          // Modal Footer
+          .modal-footer
+            h6 Derechos Reservados 2022 &#169

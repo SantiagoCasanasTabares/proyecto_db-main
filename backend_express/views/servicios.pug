@@ -1,0 +1,35 @@
+head
+  meta(charset='utf-8')
+  title Servicios
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css') 
+  body
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") 
+              span.sr-only Close  
+            h4(style="font-size:50" )
+             #myModalLabel.modal-title
+             b
+              center| ¿Que servicio desea contratar?
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:3000/servicios')
+            div.form-group
+            center 
+             a(class='button' href='http://localhost:3000/registro_trabajador' class='btn btn-primary' target='_blank' ) tpup
+            div.form-group
+            center         
+             <button type="button"> <img src="https://bit.ly/3BF9FD7" height ="80" width="100"/> </button><p>Hola</p>
+             <button type="button"> <img src="https://bit.ly/3BF9FD7" height ="80" width="100" /></button> <p>Hola</p>
+            div.form-group
+            center 
+             <button type="button"> <img src="https://bit.ly/3BF9FD7" height ="80" width="100" /></button>
+             <button type="button"> <img src="https://bit.ly/3BF9FD7" height ="80" width="100" /></button>
+            div.form-group 
+          // Modal Footer
+          .modal-footer
+            h6 Derechos Reservados 2022 &#169

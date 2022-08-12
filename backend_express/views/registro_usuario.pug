@@ -17,7 +17,7 @@ head
               center| Información de usuario
           // Modal Body
           .modal-body
-            form(role='form' method='POST' action='http://localhost:3000/registro_usuario)
+            form(role='form' method='POST' action='http://localhost:3000/registro_usuario')
             div.form-group
                 label(for='nombre') Nombre:    
                 input(type='text', name='nombre', placeholder='Francia')
@@ -58,11 +58,12 @@ head
                 label(for='password') ㅤㅤRepetir contraseña:
                 input(type='password', name='password', placeholder='xxxx') 
             div.form-group    
-                <label for="myfile">Recibo de Servicios Públicos (pdf):</label>
-                <input type="file" id="myfile" name="myfile"><br><br>    
+                label(for="myfile") Recibo de Servicios Públicos (pdf):
+            div.form-group
+                input(type="file" id="myfile" name="myfile")    
             div.form-group
             center         
-             a(class='button' href='http://localhost:3000/labor_trabajador' class='btn btn-primary' target='_blank') Continuar registro
+             a(class='button' href='http://localhost:3000/medio_pago' class='btn btn-primary' target='_blank') Continuar registro
           // Modal Footer
           .modal-footer
             h6 Derechos Reservados 2022 &#169
