@@ -120,7 +120,8 @@ INSERT INTO Labor (labor_nombre, labor_descripcion) VALUES
 ('Chef'),
 ('Niñero/a'),
 ('Paseador/a de mascotas'),
-('Empleado/a doméstico/a');
+('Empleado/a doméstico/a'),
+('Conductor/a');
 
 -- Procedimientos 
 
