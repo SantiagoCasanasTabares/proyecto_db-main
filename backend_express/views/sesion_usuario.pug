@@ -1,0 +1,30 @@
+head
+  meta(charset='utf-8')
+  title Bienvenido Usuario
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
+  link(rel='stylesheet', href='/stylesheets/style.css') 
+  body
+    .modal-dialog
+        .modal-content
+          // Modal Header
+          .modal-header
+            button.close(type="button", data-dismiss="modal")
+              span(aria-hidden="true") 
+              span.sr-only Close  
+            h4(style="font-size:50" )
+             #myModalLabel.modal-title
+             b
+              center| ¡Bienvenido, Usuario!
+          // Modal Body
+          .modal-body
+            form(role='form' method='POST' action='http://localhost:3000/sesion_usuario')
+            div.form-group
+            center 
+             a(class='button' href='http://localhost:3000/servicios' class='btn btn-primary' target='_blank' ) Contratar servicio
+            div.form-group
+            center         
+             a(class='button' href='http://localhost:3000/registro_usuario' class='btn btn-primary' target='_blank') Registro de pagos
+            div.form-group 
+          // Modal Footer
+          .modal-footer
+            h6 Derechos Reservados 2022 &#169
